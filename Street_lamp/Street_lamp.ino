@@ -4,6 +4,7 @@
 #include <Ethernet.h>
 
 #define RELAY         2
+#define ONE_WIRE_BUS  6       
 #define LED_GREEN     5
 #define LED_RED       3
 #define LAMP_ON       18
@@ -157,14 +158,14 @@ void loop() {
       //if(second() >= LAMP_ON || second() < LAMP_OFF){
         Serial.println("LAMP ON");
         digitalWrite(RELAY, HIGH);
-        digitalWrite(LED_RED, HIGH);
-        digitalWrite(LED_GREEN, LOW);
+        digitalWrite(LED_RED, LOW);
+        digitalWrite(LED_GREEN, HIGH);
       }
       else{
         Serial.println("LAMP OFF");
         digitalWrite(RELAY, LOW);
-        digitalWrite(LED_RED, LOW);
-        digitalWrite(LED_GREEN, HIGH);
+        digitalWrite(LED_RED, HIGH);
+        digitalWrite(LED_GREEN, LOW);
       }
      // if (minute() % 2 == 0) digitalWrite(RELAY, HIGH);
      // else digitalWrite(RELAY, LOW);
